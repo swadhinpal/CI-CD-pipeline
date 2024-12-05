@@ -1,6 +1,6 @@
 import express from 'express';
 const app = express();
-const port = process.env.PORT || 3000; // Default to 3000
+const port = 3000; // Default to 3000
 
   
 
@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
       res.status(500).send('Something went wrong');
     }
   });
-  
+
 // Export the server for tests
 export { server, app };
