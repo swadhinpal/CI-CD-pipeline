@@ -3,10 +3,13 @@ import cors from 'cors'; // Import the CORS middleware
 
 const app = express();
 const port = 3000; // Default to 3000
+const corsOptions = {
+    origin: '*',
+    credentials: true, // Allow credentials
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+};
 
-// Use CORS middleware to allow cross-origin requests
-app.use(cors());
-
+app.use(cors(corsOptions));
 const server = app.listen(port, () => {
     console.log(`App running on http://localhost:${port}`);
 });
