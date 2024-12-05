@@ -3,14 +3,13 @@ const chaiHttp = require('chai-http');
 const app = require('./app');
 
 chai.use(chaiHttp);
-const { expect } = chai;
 
 describe('GET /', () => {
     it('should return Hello World', (done) => {
         chai.request(app)
             .get('/')
             .end((err, res) => {
-                expect(res.text).to.equal('Hello World');
+                chai.expect(res.text).to.equal('Hello World');
                 done();
             });
     });
