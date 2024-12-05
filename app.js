@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';  // ES module import syntax
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -13,4 +13,4 @@ app.listen(port, () => {
     console.log(`App running on http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;  // Use default export for the app
