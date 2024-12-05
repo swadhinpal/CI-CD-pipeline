@@ -1,8 +1,11 @@
 import express from 'express';
+import cors from 'cors'; // Import the CORS middleware
+
 const app = express();
 const port = 3000; // Default to 3000
 
-  
+// Use CORS middleware to allow cross-origin requests
+app.use(cors());
 
 const server = app.listen(port, () => {
     console.log(`App running on http://localhost:${port}`);
@@ -10,12 +13,12 @@ const server = app.listen(port, () => {
 
 app.get('/', (req, res) => {
     try {
-      res.send('Hello World');
+        res.send('Hello World');
     } catch (err) {
-      console.error("Error handling request:", err);
-      res.status(500).send('Something went wrong');
+        console.error("Error handling request:", err);
+        res.status(500).send('Something went wrong');
     }
-  });
+});
 
 // Export the server for tests
 export { server, app };
