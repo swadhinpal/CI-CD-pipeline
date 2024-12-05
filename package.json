@@ -1,14 +1,16 @@
 {
   "dependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "express": "^4.21.1"
   },
   "scripts": {
     "start": "node app.js",
     "test": "mocha"
   },
+  
   "devDependencies": {
-    "chai": "^5.1.2",
-    "chai-http": "^5.1.1",
     "mocha": "^11.0.1"
-  }
+  },
+  "type": "module"
 }
