@@ -1,20 +1,8 @@
-import app from './app.js';  // Use import since you're using ES modules
-import request from 'supertest';  // Assuming you're using supertest for HTTP requests
-import assert from 'assert';  // To assert equality
-import http from 'http';
+import { server, app } from './app.js';  // Import the running app and server
+import request from 'supertest';  // For HTTP requests
+import assert from 'assert';  // For assertion checks
 
-let server;
-
-before((done) => {
-  // Dynamically assign a free port
-  server = http.createServer(app);
-  
-  server.listen(0, () => {  // '0' lets the OS pick an available port
-    const address = server.address();
-    console.log(`Server running on port ${address.port}`);
-    done();
-  });
-});
+// No need to create a new server, as the one from app.js is already running
 
 after(() => {
   // Close the server after tests complete

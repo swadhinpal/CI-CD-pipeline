@@ -1,16 +1,14 @@
-import express from 'express';  // ES module import syntax
+import express from 'express';
 const app = express();
-const port = process.env.PORT || 3000;
-
-console.log('Initializing server...');
+const port = process.env.PORT || 3000; // Default to 3000
 
 app.get('/', (req, res) => {
-    console.log('Received GET request at /');
     res.send('Hello World');
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`App running on http://localhost:${port}`);
 });
 
-export default app;  // Use default export for the app
+// Export the server for tests
+export { server, app };
