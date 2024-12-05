@@ -1,4 +1,4 @@
-import { server, app } from './app.js';  // Import the running app and server
+import server from './app.js';  // Import the running app and server
 import request from 'supertest';  // For HTTP requests
 import assert from 'assert';  // For assertion checks
 

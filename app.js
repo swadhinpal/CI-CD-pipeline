@@ -24,4 +24,4 @@ app.get('/', (req, res) => {
 });
 
 // Export the server for tests
-export { server, app };
+export default server;
